@@ -1,12 +1,50 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import Hello from './Hello';
+import Post from './Post';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const person = {
+  name: 'Usman Bashir',
+  age: 0,
+  favorites: [
+    'Person of Interest',
+    'Scrubs',
+    'Numb3rs',
+    'Angel',
+    'Boston Legal',
+    'Futurama',
+    'Burn Notice',
+    'The West Wing',
+    'Stargate SG-1',
+    'Battlestar Galactica',
+  ]
+};
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+// ReactDOM.render(
+//   <Hello
+//     name={person.name}
+//     age={person.age}
+//     tvShows={person.favorites} />,
+//   document.getElementById('root')
+// );
+
+const post = {
+  title: 'Hello World',
+  author: 'Usman',
+  body: 'Check out this body!',
+  comments: [
+    'First!',
+    'This post sucks!!!',
+    "You can't write at all. Get a life!"
+  ]
+};
+
+ReactDOM.render(
+  <Post
+    title={post.title}
+    author={post.author}
+    body={post.body}
+    comments={post.comments} />,
+  document.getElementById('root')
+);
